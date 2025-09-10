@@ -4,7 +4,7 @@ from pages.main import MainPage
 from pages.order_feed import OrderFeedPage
 from helpers import create_order_return_text_id
 from helpers import create_order_fast
-
+import time
 
 @allure.suite("Раздел «Лента заказов»")
 class TestOrderFeed:
@@ -41,7 +41,7 @@ class TestOrderFeed:
         create_order_fast(main)
 
         # Ждем обновления счетчика (даем время на обновление данных)
-        import time; time.sleep(2)
+        time.sleep(2)
 
         main.click_feed_button()
         feed = OrderFeedPage(driver)
@@ -76,7 +76,7 @@ class TestOrderFeed:
         create_order_fast(main)
 
         # Ждем обновления счетчика (даем время на обновление данных)
-        import time; time.sleep(2)
+        time.sleep(2)
 
         main.click_feed_button()
         feed = OrderFeedPage(driver)
